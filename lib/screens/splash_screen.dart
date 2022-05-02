@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:tech_blog/const_colors.dart';
 import 'package:tech_blog/gen/assets.gen.dart';
-import 'home_screen.dart';
+import 'main_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -18,10 +18,10 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(
       Duration(seconds: 2),
       () {
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => HomePage(),
+            builder: (context) => MainScreen(),
           ),
         );
       },
