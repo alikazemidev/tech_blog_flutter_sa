@@ -169,27 +169,97 @@ class _MainScreenState extends State<MainScreen> {
                 ),
               ),
               // *hotest article
-              SizedBox(
-                height: size.height / 4.1,
+              Container(
+                height: size.height / 3.5,
                 child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: blogList.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: EdgeInsets.fromLTRB(
-                          5,
-                          8,
-                          index == 0 ? bodyMargin : 15,
-                          8,
-                        ),
-                        child: Container(
-                          width: 100,
-                          height: 100,
-                          color: Colors.red,
-                        ),
-                      );
-                    }),
-              )
+                  scrollDirection: Axis.horizontal,
+                  itemCount: blogList.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding:
+                          EdgeInsets.only(right: index == 0 ? bodyMargin : 15),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(8),
+                            child: Container(
+                              height: size.height / 5.3,
+                              width: size.width / 2.4,
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                            blogList[index].imageUrl),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    foregroundDecoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      gradient: LinearGradient(
+                                        colors: GradiantColors.blogPost,
+                                        begin: Alignment.bottomCenter,
+                                        end: Alignment.topCenter,
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    bottom: 8,
+                                    left: 0,
+                                    right: 0,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        Text(
+                                          '${blogList[index].writer}',
+                                          style: textTheme.subtitle1,
+                                        ),
+                                        Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          // crossAxisAlignment:
+                                          //     CrossAxisAlignment.baseline,
+                                          // textBaseline: TextBaseline.ideographic,
+                                          children: [
+                                            Text(
+                                              ' ${blogList[index].views} ',
+                                              style: textTheme.subtitle1,
+                                            ),
+                                            SizedBox(
+                                              width: 5,
+                                            ),
+                                            Icon(
+                                              Icons.remove_red_eye_sharp,
+                                              color: Colors.white,
+                                              size: 20,
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Container(
+                            width: size.width / 2.4,
+                            child: Text(
+                              blogList[index].title,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          )
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              ),
             ],
           ),
         ),
