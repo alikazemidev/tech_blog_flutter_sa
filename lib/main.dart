@@ -35,16 +35,24 @@ class MyApp extends StatelessWidget {
         fontFamily: 'dana',
         textTheme: TextTheme(
           headline1: TextStyle(
-            fontSize: 18,
-            color: Colors.black,
+            fontSize: 16,
+            color: SolidColors.posterTitle,
+            fontWeight: FontWeight.w700,
+          ),
+          subtitle1: TextStyle(
+            fontSize: 14,
+            color: SolidColors.posterSubTitle,
+            fontWeight: FontWeight.w300,
           ),
           headline2: TextStyle(
-            fontSize: 16,
-            color: Colors.black,
+            fontSize: 14,
+            color: Colors.white,
+            fontWeight: FontWeight.w300,
           ),
           headline3: TextStyle(
-            fontSize: 15,
-            color: Colors.black,
+            fontSize: 14,
+            color: Color.fromARGB(255, 53, 53, 53),
+            fontWeight: FontWeight.w700,
           ),
           headline4: TextStyle(
             fontSize: 14,
@@ -52,8 +60,8 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.w700,
           ),
           bodyText1: TextStyle(
-            fontSize: 16,
-            color: Colors.black,
+            fontSize: 13,
+            fontWeight: FontWeight.w300,
           ),
         ),
       ),
