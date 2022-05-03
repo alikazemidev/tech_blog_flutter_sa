@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tech_blog/const_colors.dart';
+import 'package:tech_blog/const_string.dart';
 import 'package:tech_blog/models/fake_data.dart';
 
 import '../gen/assets.gen.dart';
@@ -103,8 +104,8 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                 ],
               ),
-              //  *hastag list view
               SizedBox(height: 16),
+              //  *hastag list view
               Container(
                 height: 60,
                 child: ListView.builder(
@@ -147,6 +148,48 @@ class _MainScreenState extends State<MainScreen> {
                   },
                 ),
               ),
+              SizedBox(height: 32),
+              //*see all hotest article
+              Padding(
+                padding: EdgeInsets.only(right: bodyMargin),
+                child: Row(
+                  children: [
+                    ImageIcon(
+                      Assets.icons.bluePen,
+                      color: SolidColors.colorTitle,
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      ConstString.viewHotestBlogs,
+                      style: textTheme.headline3!.copyWith(
+                        color: SolidColors.colorTitle,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              // *hotest article
+              SizedBox(
+                height: size.height / 4.1,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: blogList.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: EdgeInsets.fromLTRB(
+                          5,
+                          8,
+                          index == 0 ? bodyMargin : 15,
+                          8,
+                        ),
+                        child: Container(
+                          width: 100,
+                          height: 100,
+                          color: Colors.red,
+                        ),
+                      );
+                    }),
+              )
             ],
           ),
         ),
