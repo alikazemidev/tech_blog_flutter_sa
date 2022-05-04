@@ -307,7 +307,6 @@ class _MainScreenState extends State<MainScreen> {
                                       fit: BoxFit.cover,
                                     ),
                                   ),
-                                  
                                 ),
                               ),
                             ),
@@ -324,6 +323,8 @@ class _MainScreenState extends State<MainScreen> {
                     },
                   ),
                 ),
+                //  dev branch
+                Text('dev branch')
               ],
             ),
           ),
