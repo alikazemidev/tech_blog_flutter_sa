@@ -261,7 +261,7 @@ class _MainScreenState extends State<MainScreen> {
                     },
                   ),
                 ),
-                //!  ==========================my dev========================================================
+                //!  ==================my dev==================================
                 //*see all hotest podcasts
                 Padding(
                   padding: EdgeInsets.only(right: bodyMargin),
@@ -286,7 +286,7 @@ class _MainScreenState extends State<MainScreen> {
                   height: size.height / 3.5,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: blogList.length,
+                    itemCount: podcastList.length,
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: EdgeInsets.only(
