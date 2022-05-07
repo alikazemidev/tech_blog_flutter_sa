@@ -21,6 +21,10 @@ class GradiantColors {
     const Color(0xff19005E),
     const Color(0xff440457),
   ];
+  static const List<Color> bottomNavBackground = [
+    const Color.fromARGB(0, 255, 255, 255),
+    const Color.fromARGB(255, 255, 255, 255),
+  ];
   static const List<Color> tags = [
     const Color(0xff000000),
     const Color(0xff3f3f3f),
